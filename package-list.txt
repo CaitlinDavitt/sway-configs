@@ -1,0 +1,25 @@
+sway
+swayidle
+swaylock
+swaybg
+waybar
+lxappearance
+polkit-gnome
+pcmanfm-gtk
+grim
+slurp
+fira code
+mako
+wofi
+fish
+wezterm
+bluez-utils
+network-manager-applet
+btop
+wayland-protocols
+xorg-xwayland
+brightnessctl
+
+oreo gray cursor
+graphite gtk theme
+tela circle icons
