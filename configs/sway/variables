@@ -1,0 +1,6 @@
+set $term wezterm
+set $browser MOZ_ENABLE_WAYLAND=1 firefox
+set $filemanager nemo
+set $editor gnvim
+set $launcher nwg-drawer -c 6 -is 64 -fscol 2 -term wezterm
+set $exit nwg-bar -p center -a middle -i 48

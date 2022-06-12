@@ -19,7 +19,8 @@ btop
 wayland-protocols
 xorg-xwayland
 brightnessctl
+nwg-shell
 
 oreo gray cursor
-graphite gtk theme
+graphite nord gtk theme
 tela circle icons

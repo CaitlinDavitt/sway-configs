@@ -1,0 +1,6 @@
+exec wlsunset -l 41.1322 -L -87.9841 -t 4000 -T 6500 -g 1.0
+exec swaync -s /home/caitlin/.config/swaync/style.css
+exec nm-applet --indicator
+exec_always autotiling -w 1 2 3 4 5 6 7 8 9 10
+exec_always nwg-panel
+exec_always nwg-shell-check-updates

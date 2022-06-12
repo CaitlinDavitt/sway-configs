@@ -3,22 +3,41 @@
 # daemonize
 indicator-caps-lock
 # datestr=%A
-image=$HOME/Wallpapers/space.png
-scaling=fill
-font=FiraCode
-font-size=20
+image=/usr/share/backgrounds/nordic-wallpapers/ign_astronaut.png
 
-# Ring
-indicator-radius=115
-# line-uses-ring
-line-color=#3b4252
-text-color=#d8dee9
-inside-color=#28282888
-inside-ver-color=#28282888
-line-ver-color=#83a598
-ring-ver-color=#d2d8d9
-ring-color=#2b2c2e
-key-hl-color=#d2d8d9
-separator-color=#4c566a
-layout-text-color=#eceff4
-line-wrong-color=#d08770
+font=FiraCode
+indicator-radius=100
+indicator-thickness=20
+#indicator-idle-visible
+#no-unlock-indicator
+
+inside-color=4c566aee
+inside-clear-color=b48eadee
+inside-ver-color=8fbcbbee
+inside-wrong-color=bf616aee
+line-uses-inside
+
+key-hl-color=88c0d0ee
+layout-border-color=434c5eee
+
+ring-color=8fbcbbee
+ring-clear-color=ebcb8bee
+ring-ver-color=8fbcbbee
+ring-wrong-color=bf616aee
+separator-color=5e81acee
+
+text-color=d8dee9ee
+text-clear-color=2e3440ee
+text-ver-color=2e3440ee
+text-wrong-color=2e3440ee
+
+# Swaylock Effects options
+timestr=%H:%M
+datestr=%a %d %b
+fade-in=1
+grace=5
+indicator
+clock
+screenshots
+#effect-pixelate=5
+effect-blur=5x10
