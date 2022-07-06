@@ -10,11 +10,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'phha/zenburn.nvim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'jasonccox/vim-wayland-clipboard'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'dylanaraps/wal.vim'
@@ -25,7 +24,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'jasonccox/vim-wayland-clipboard'
-Plug 'arcticicestudio/nord-vim'
+"Plug 'arcticicestudio/nord-vim'
+Plug 'shaunsingh/nord.nvim'
 Plug 'andweeb/presence.nvim'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -40,6 +40,10 @@ Plug 'voldikss/vim-floaterm'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'reedes/vim-lexical'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -51,10 +55,11 @@ noremap j h
 set number
 set relativenumber
 set background=dark
-"set termguicolors
+set termguicolors
 colorscheme nord
 "colorscheme zenburn
 "colorscheme wal
+let g:nord_italic = v:false
 
 :set mouse=a
 
@@ -76,6 +81,8 @@ let g:lexical#spelllang = ['en_us',]
 let g:lexical#thesaurus = ['~/.config/nvim/thesaurus/moby_thesaurus.txt',]
 let g:lexical#spellfile = ['~/.config/nvim/en.utf-8.add',]
 let g:lexical#spell_key = '<leader>s'
+
+
 let g:dashboard_custom_header = [
 \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
 \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',

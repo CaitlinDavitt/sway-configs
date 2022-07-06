@@ -2,7 +2,7 @@
   "dependencies": {
     "coc-git": ">=2.4.10",
     "coc-json": ">=1.4.2",
-    "coc-rust-analyzer": ">=0.63.0",
+    "coc-rust-analyzer": ">=0.64.0",
     "coc-spell-checker": ">=1.2.0"
   }
 }

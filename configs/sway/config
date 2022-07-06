@@ -53,8 +53,8 @@ exec piactl connect
 
 ### Turn off screen on lid closed
 set $laptop eDP-1
-#bindswitch lid:on output $laptop disable
-#bindswitch lid:off output $laptop enable
+bindswitch lid:on output $laptop disable
+bindswitch lid:off output $laptop enable
 
 ### Idle configuration
 exec swayidle -w \
@@ -93,10 +93,11 @@ bindsym $Mod+x exec $exit
 bindsym $Mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 # screenshot
-bindsym Print exec screenshot fullscreen
-bindsym Control+Print exec screenshot display
-bindsym Shift+Control+Print exec grim -g "$(slurp)" - | swappy -f -
-bindsym $Mod+Shift+Control+Print exec screenshot focused
+bindsym $Mod+Print exec grimshot --notify save active
+bindsym $Mod+Shift+Print exec grimshot --notify save area
+#bindsym Shift+Control+Print exec grim -g "$(slurp)" - | swappy -f -
+#bindsym $Mod+Shift+Control+Print exec screenshot focused
+
 
 # audio
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -287,6 +288,8 @@ for_window [app_id="(?i)(?:blueman-manager|azote|gnome-disks)"] floating enable
 for_window [app_id="(?i)(?:pavucontrol|nm-connection-editor|gsimplecal|galculator)"] floating enable
 for_window [app_id="(?i)(?:firefox|chromium)"] border none
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
+for_window [app_id="quickgui"] floating enable
+for_window [title="gnome-calculator"] floating enable
 
 popup_during_fullscreen smart
 

@@ -106,11 +106,12 @@
       "interval": 1,
       "buttons": true,
       "buttons-position": "left",
-      "chars": 50,
+      "chars": 40,
       "css-name": "button-grid",
       "icon-size": 16,
       "button-css-name": "button-custom",
-      "label-css-name": "panel-top"
+      "label-css-name": "panel-top",
+      "angle": 0.0
     },
     "clock": {
       "format": "%a, %d. %b  %H:%M:%S",
@@ -180,7 +181,9 @@
       "padding": 2,
       "terminal": "foot",
       "width": 0
-    }
+    },
+    "exclusive-zone": true,
+    "openweather": {}
   },
   {
     "name": "bottom",
@@ -226,7 +229,7 @@
     ],
     "modules-center": [],
     "modules-right": [
-      "executor-weather",
+      "openweather",
       "executor-cpuav",
       "executor-cpubar",
       "executor-temp",
@@ -366,8 +369,43 @@
       "on-scroll-up": "",
       "on-scroll-down": "",
       "root-css-name": "",
-      "icon-placement": "left"
+      "icon-placement": "left",
+      "angle": 0.0
     },
-    "exclusive-zone": true
+    "exclusive-zone": true,
+    "openweather": {
+      "module-id": "1656427104.839625",
+      "appid": "675602c1f5fb6507f510fcb03f649a37",
+      "lat": 41.8818,
+      "long": -87.6232,
+      "lang": "en",
+      "units": "metric",
+      "interval": 1800,
+      "loc-name": "",
+      "weather-icons": "light",
+      "on-right-click": "",
+      "on-middle-click": "",
+      "on-scroll": "",
+      "icon-placement": "start",
+      "icon-size": 24,
+      "css-name": "weather",
+      "show-name": false,
+      "angle": 0.0,
+      "ow-popup-icons": "dark",
+      "popup-header-icon-size": 48,
+      "popup-icon-size": 24,
+      "popup-text-size": "medium",
+      "popup-css-name": "weather-forecast",
+      "popup-placement": "right",
+      "popup-margin-horizontal": 0,
+      "popup-margin-top": 0,
+      "popup-margin-bottom": 0,
+      "show-humidity": true,
+      "show-wind": true,
+      "show-pressure": true,
+      "show-cloudiness": true,
+      "show-visibility": true,
+      "show-pop": true
+    }
   }
 ]
