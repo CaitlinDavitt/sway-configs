@@ -1,0 +1,11 @@
+lastupdatecheck: 0
+recentrepos:
+- /home/caitlin/Repos/Sbot
+- /home/caitlin/.config/nvim
+- /home/caitlin/Repos/sway-configs
+startuppopupversion: 5
+customcommandshistory:
+- q
+- exit
+- :q
+hidecommandlog: true

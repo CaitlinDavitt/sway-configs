@@ -267,7 +267,7 @@
       "script": "gopsuinfo -c g",
       "interval": 2,
       "tooltip-text": "",
-      "on-left-click": "",
+      "on-left-click": "kitty btop",
       "on-middle-click": "",
       "on-right-click": "",
       "on-scroll-up": "",
@@ -275,13 +275,14 @@
       "css-name": "",
       "icon-size": 16,
       "icon-placement": "left",
-      "root-css-name": ""
+      "root-css-name": "",
+      "angle": 0.0
     },
     "executor-cpuav": {
       "script": "gopsuinfo -i a",
       "interval": 2,
       "tooltip-text": "CPU average load",
-      "on-left-click": "wezterm start htop",
+      "on-left-click": "kitty btop",
       "on-middle-click": "",
       "on-right-click": "",
       "on-scroll-up": "",
@@ -289,7 +290,8 @@
       "css-name": "",
       "icon-size": 16,
       "icon-placement": "right",
-      "root-css-name": ""
+      "root-css-name": "",
+      "angle": 0.0
     },
     "executor-temp": {
       "script": "gopsuinfo -i t",

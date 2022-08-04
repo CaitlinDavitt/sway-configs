@@ -2,11 +2,11 @@
  * vim: ft=less 
  */
 
-@define-color border-color rgb(7, 7, 7);
-@define-color bg #3b4252;
-@define-color bg-hover #434c5e;
-@define-color bg-focus #4c566a;
-@define-color bg-selected #4c566a;
+@define-color border-color rgb(7,7,7);
+@define-color bg #2F383E;
+@define-color bg-hover #374247;
+@define-color bg-focus rgba(255,255,255,.07);
+@define-color bg-selected rgb(255,255,255);
 
 .notification-row {
   outline: none;
@@ -139,7 +139,7 @@
 }
 
 .control-center {
-  background: rgba(59, 66, 82,50);
+  background: rgba(47, 56, 62,.70);
 }
 .control-center-list {
   background: transparent;

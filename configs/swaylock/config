@@ -3,7 +3,7 @@
 # daemonize
 indicator-caps-lock
 # datestr=%A
-image=/usr/share/backgrounds/nordic-wallpapers/ign_astronaut.png
+image=/usr/share/backgrounds/everforest/everforest.jpg
 
 font=FiraCode
 indicator-radius=100

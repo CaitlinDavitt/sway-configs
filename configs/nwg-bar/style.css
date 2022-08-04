@@ -1,15 +1,16 @@
 window {
-        background-color: #2e3440;
+        background-color: #374247;
+				border-radius: 10px;
 }
 
-/* Outer bar container, takes all the window width/height */
+/* Outer bar container, takes al the window width/height */
 #outer-box {
 	margin: 0px
 }
 
 /* Inner bar container, surrounds buttons */
 #inner-box {
-	background-color: #3b4252;
+	background-color: #2F383E;
 	border-radius: 10px;
 	border-style: none;
 	border-width: 1px;

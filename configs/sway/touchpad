@@ -1,6 +1,6 @@
 input "type:touchpad" {
   accel_profile adaptive
-  pointer_accel 0.3
+  pointer_accel 0.0
   natural_scroll disabled
   scroll_factor 1.0
   scroll_method two_finger
