@@ -42,6 +42,7 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec ~/.azotebg
+exec dbus-run-session
 #exec oguri
 #exec set-dwall
 exec flatpak run com.discordapp.Discord
@@ -306,12 +307,13 @@ assign [app_id="discord"] 6
 assign [class = "discord"] 6
 #for_window [class ="discord"] focus
 
+assign [app_id="Thunderbird"] 3
 assign [class="Thunderbird"] 3
 #for_window [class="Thunderbird"] focus
 
 set $output-primary eDP-1
 set $output-secondary DP-1
-
+set $output-secondary DP-3
 # workspace to displays
 workspace 1 output $output-primary
 workspace 2 output $output-primary
@@ -324,3 +326,9 @@ workspace 7 output $output-secondary
 workspace 8 output $output-secondary
 workspace 9 output $output-secondary
 workspace 10 output $output-secondary
+
+workspace 6 output $output-third 
+workspace 7 output $output-third
+workspace 8 output $output-third
+workspace 9 output $output-third
+workspace 10 output $output-third

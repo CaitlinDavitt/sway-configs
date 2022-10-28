@@ -11,7 +11,7 @@
   },
   {
     "label": "Sleep",
-    "exec": "systemctl suspend",
+    "exec": "sh /home/caitlin/.config/sway/scripts/suspend.sh",
     "icon": "/usr/share/nwg-bar/images/system-sleep.svg"
   },
   {

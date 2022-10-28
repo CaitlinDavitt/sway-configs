@@ -1,0 +1,285 @@
+[
+  {
+    "name": "bottom",
+    "output": "",
+    "layer": "bottom",
+    "position": "top",
+    "height": 20,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "padding-horizontal": 6,
+    "padding-vertical": 0,
+    "spacing": 10,
+    "items-padding": 0,
+    "css-name": "panel-bottom",
+    "icons": "",
+    "menu-start": "right",
+    "width": "auto",
+    "controls": "off",
+    "controls-settings": {
+      "components": [
+        "net",
+        "brightness",
+        "volume",
+        "battery",
+        "bluetooth"
+      ],
+      "commands": {
+        "net": "",
+        "bluetooth": "",
+        "battery": ""
+      },
+      "show-values": false,
+      "output-switcher": false,
+      "backlight-controller": "light",
+      "backlight-device": "",
+      "interval": 1,
+      "window-width": 0,
+      "window-margin-horizontal": 0,
+      "window-margin-vertical": 0,
+      "icon-size": 16,
+      "hover-opens": true,
+      "leave-closes": true,
+      "root-css-name": "controls-overview",
+      "css-name": "controls-window",
+      "net-interface": "",
+      "angle": 0.0,
+      "custom-items": [
+        {
+          "name": "Panel settings",
+          "icon": "nwg-panel",
+          "cmd": "nwg-panel-config"
+        }
+      ],
+      "menu": {
+        "name": "Exit",
+        "icon": "system-shutdown-symbolic",
+        "items": [
+          {
+            "name": "Lock",
+            "cmd": "swaylock -f -c 000000"
+          },
+          {
+            "name": "Logout",
+            "cmd": "swaymsg exit"
+          },
+          {
+            "name": "Reboot",
+            "cmd": "systemctl reboot"
+          },
+          {
+            "name": "Shutdown",
+            "cmd": "systemctl -i poweroff"
+          }
+        ]
+      }
+    },
+    "scratchpad": {},
+    "clock": {},
+    "menu-start-settings": {
+      "cmd-lock": "swaylock -f -c 000000",
+      "cmd-logout": "swaymsg exit",
+      "cmd-restart": "systemctl reboot",
+      "cmd-shutdown": "systemctl -i poweroff",
+      "autohide": true,
+      "file-manager": "nemo",
+      "height": 0,
+      "icon-size-large": 32,
+      "icon-size-small": 16,
+      "icon-size-button": 16,
+      "margin-bottom": 0,
+      "margin-left": 0,
+      "margin-right": 0,
+      "margin-top": 0,
+      "padding": 2,
+      "terminal": "wezterm",
+      "width": 0
+    },
+    "modules-left": [
+      "sway-taskbar"
+    ],
+    "modules-center": [
+      "clock"
+    ],
+    "modules-right": [
+      "openweather",
+      "executor-cpuav",
+      "executor-temp",
+      "tray"
+    ],
+    "sway-taskbar": {
+      "workspace-buttons": false,
+      "show-app-icon": true,
+      "show-layout": false,
+      "show-app-name": true,
+      "name-max-len": 15,
+      "workspaces-spacing": 0,
+      "task-padding": 0,
+      "all-outputs": true,
+      "image-size": 16,
+      "workspace-menu": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "all-workspaces": false,
+      "mark-autotiling": false,
+      "mark-xwayland": false,
+      "angle": 0.0
+    },
+    "executor-cpubar": {
+      "script": "gopsuinfo -c g",
+      "interval": 2,
+      "tooltip-text": "",
+      "on-left-click": "kitty btop",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "css-name": "",
+      "icon-size": 16,
+      "icon-placement": "left",
+      "root-css-name": "",
+      "angle": 0.0
+    },
+    "executor-cpuav": {
+      "script": "gopsuinfo -i a",
+      "interval": 2,
+      "tooltip-text": "CPU average load",
+      "on-left-click": "kitty btop",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "css-name": "",
+      "icon-size": 16,
+      "icon-placement": "right",
+      "root-css-name": "",
+      "angle": 0.0
+    },
+    "executor-temp": {
+      "script": "gopsuinfo -i t",
+      "interval": 5,
+      "tooltip-text": "",
+      "on-left-click": "",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "css-name": "",
+      "icon-size": 16,
+      "icon-placement": "left"
+    },
+    "executor-memory": {
+      "script": "gopsuinfo -i m",
+      "interval": 5,
+      "tooltip-text": "",
+      "on-left-click": "",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "css-name": "",
+      "icon-size": 16,
+      "icon-placement": "left",
+      "root-css-name": ""
+    },
+    "executor-drives": {
+      "script": "gopsuinfo -i n",
+      "interval": 15,
+      "tooltip-text": "",
+      "on-left-click": "",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "css-name": "",
+      "icon-size": 16,
+      "icon-placement": "left"
+    },
+    "playerctl": {},
+    "sway-workspaces": {
+      "numbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "show-icon": true,
+      "image-size": 16,
+      "show-name": true,
+      "name-length": 40,
+      "mark-autotiling": false,
+      "mark-content": false,
+      "show-layout": false,
+      "angle": 0.0
+    },
+    "dwl-tags": {},
+    "tray": {},
+    "executor-weather": {
+      "script": "curl https://wttr.in/?format=1 -s",
+      "interval": 1800,
+      "css-name": "weather",
+      "on-right-click": "",
+      "icon-size": 16,
+      "show-icon": true,
+      "tooltip-text": "",
+      "on-left-click": "",
+      "on-middle-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "root-css-name": "",
+      "icon-placement": "left",
+      "angle": 0.0
+    },
+    "exclusive-zone": true,
+    "openweather": {
+      "module-id": "1656427104.839625",
+      "appid": "675602c1f5fb6507f510fcb03f649a37",
+      "lat": 41.8818,
+      "long": -87.6232,
+      "lang": "en",
+      "units": "metric",
+      "interval": 1800,
+      "loc-name": "",
+      "weather-icons": "light",
+      "on-right-click": "",
+      "on-middle-click": "",
+      "on-scroll": "",
+      "icon-placement": "start",
+      "icon-size": 24,
+      "css-name": "weather",
+      "show-name": false,
+      "angle": 0.0,
+      "ow-popup-icons": "dark",
+      "popup-header-icon-size": 48,
+      "popup-icon-size": 24,
+      "popup-text-size": "medium",
+      "popup-css-name": "weather-forecast",
+      "popup-placement": "right",
+      "popup-margin-horizontal": 0,
+      "popup-margin-top": 0,
+      "popup-margin-bottom": 0,
+      "show-humidity": true,
+      "show-wind": true,
+      "show-pressure": true,
+      "show-cloudiness": true,
+      "show-visibility": true,
+      "show-pop": true
+    },
+    "brightness-slider": {}
+  }
+]

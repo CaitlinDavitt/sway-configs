@@ -12,3 +12,5 @@ window_padding_width 10
 include current-theme.conf
 # END_KITTY_THEME
 KITTY_ENABLE_WAYLAND=1
+background_opacity 0.80
+

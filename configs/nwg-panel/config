@@ -1,44 +1,49 @@
 [
   {
     "name": "top",
-    "output": "",
+    "output": "eDP-1",
     "layer": "bottom",
     "position": "top",
-    "width": "auto",
-    "height": 30,
-    "homogeneous": true,
+    "height": 20,
     "margin-top": 0,
     "margin-bottom": 0,
-    "padding-horizontal": 0,
+    "padding-horizontal": 6,
     "padding-vertical": 0,
-    "spacing": 2,
+    "spacing": 10,
     "items-padding": 0,
     "css-name": "panel-top",
     "icons": "light",
     "menu-start": "off",
-    "modules-left": [
-      "playerctl"
-    ],
-    "modules-center": [
-      "clock"
-    ],
-    "modules-right": [
-      "scratchpad",
-      "tray"
-    ],
+    "width": "auto",
     "controls": "right",
     "controls-settings": {
-      "alignment": "right",
       "components": [
-        "battery",
+        "brightness",
         "volume",
-        "brightness"
+        "bluetooth",
+        "battery",
+        "net"
       ],
       "commands": {
-        "battery": "",
         "net": "",
-        "bluetooth": "blueman-manager"
+        "bluetooth": "blueman-manager",
+        "battery": "tlpui"
       },
+      "show-values": false,
+      "output-switcher": true,
+      "backlight-controller": "light",
+      "backlight-device": "sysfs/backlight/intel_backlight",
+      "interval": 1,
+      "window-width": 0,
+      "window-margin-horizontal": 0,
+      "window-margin-vertical": 0,
+      "icon-size": 16,
+      "hover-opens": false,
+      "leave-closes": true,
+      "root-css-name": "controls-overview",
+      "css-name": "controls-window",
+      "net-interface": "",
+      "angle": 0.0,
       "custom-items": [
         {
           "name": "Wallpapers",
@@ -61,9 +66,9 @@
           "cmd": "nwg-panel-config"
         },
         {
-          "name": "Shell settings",
+          "name": "Shell Settings",
           "icon": "nwg-shell-config",
-          "cmd": "nwg-shell-config"
+          "cmd": "nwg-shell"
         }
       ],
       "menu": {
@@ -72,14 +77,18 @@
         "items": [
           {
             "name": "Lock",
-            "cmd": "swaylock -f -c 000000"
+            "cmd": "nwg-lock"
           },
           {
             "name": "Logout",
             "cmd": "swaymsg exit"
           },
           {
-            "name": "Restart",
+            "name": "Sleep",
+            "cmd": "sh /home/caitlin/.config/sway/scripts/suspend.sh"
+          },
+          {
+            "name": "Reboot",
             "cmd": "systemctl reboot"
           },
           {
@@ -87,123 +96,13 @@
             "cmd": "systemctl -i poweroff"
           }
         ]
-      },
-      "show-values": false,
-      "interval": 1,
-      "icon-size": 18,
-      "hover-opens": false,
-      "leave-closes": true,
-      "css-name": "controls-window",
-      "net-interface": "wlo1",
-      "system-shutdown-symbolic": "system-shutdown",
-      "output-switcher": true,
-      "window-width": 320,
-      "window-margin": 0,
-      "root-css-name": "controls-overview",
-      "backlight-device": "sysfs/backlight/intel_backlight"
+      }
     },
-    "playerctl": {
-      "interval": 1,
-      "buttons": true,
-      "buttons-position": "left",
-      "chars": 40,
-      "css-name": "button-grid",
-      "icon-size": 16,
-      "button-css-name": "button-custom",
-      "label-css-name": "panel-top",
+    "scratchpad": {
+      "css-name": "",
+      "icon-size": 18,
       "angle": 0.0
     },
-    "clock": {
-      "format": "%a, %d. %b  %H:%M:%S",
-      "interval": 1,
-      "on-right-click": "",
-      "tooltip-text": "",
-      "on-left-click": "",
-      "on-middle-click": "",
-      "on-scroll-up": "",
-      "on-scroll-down": "",
-      "css-name": "clock",
-      "root-css-name": "root-clock"
-    },
-    "executor-updates": {
-      "script": "~/.config/sway/scripts/sway-check-update",
-      "interval": 900,
-      "icon-size": 16,
-      "on-left-click": "wezterm start ~/.config/sway/scripts/sway-update",
-      "tooltip-text": "",
-      "on-middle-click": "",
-      "on-right-click": "",
-      "on-scroll-up": "",
-      "on-scroll-down": "",
-      "css-name": "",
-      "root-css-name": "",
-      "icon-placement": "left"
-    },
-    "sway-taskbar": {},
-    "sway-workspaces": {},
-    "scratchpad": {},
-    "dwl-tags": {},
-    "tray": {
-      "icon-size": 16,
-      "root-css-name": "tray",
-      "inner-css-name": "inner-tray",
-      "smooth-scrolling-threshold": 0
-    },
-    "swaync": {
-      "tooltip-text": "Notifications",
-      "on-left-click": "swaync-client -t",
-      "on-middle-click": "",
-      "on-right-click": "",
-      "on-scroll-up": "",
-      "on-scroll-down": "",
-      "root-css-name": "root-executor",
-      "css-name": "executor",
-      "icon-placement": "left",
-      "icon-size": 16,
-      "interval": 1,
-      "always-show-icon": true
-    },
-    "menu-start-settings": {
-      "cmd-lock": "swaylock -f -c 000000",
-      "cmd-logout": "swaymsg exit",
-      "cmd-restart": "systemctl reboot",
-      "cmd-shutdown": "systemctl -i poweroff",
-      "autohide": true,
-      "file-manager": "thunar",
-      "height": 0,
-      "icon-size-large": 32,
-      "icon-size-small": 16,
-      "icon-size-button": 16,
-      "margin-bottom": 0,
-      "margin-left": 0,
-      "margin-right": 0,
-      "margin-top": 0,
-      "padding": 2,
-      "terminal": "foot",
-      "width": 0
-    },
-    "exclusive-zone": true,
-    "openweather": {}
-  },
-  {
-    "name": "bottom",
-    "output": "",
-    "layer": "bottom",
-    "position": "bottom",
-    "height": 20,
-    "margin-top": 0,
-    "margin-bottom": 0,
-    "padding-horizontal": 6,
-    "padding-vertical": 0,
-    "spacing": 10,
-    "items-padding": 0,
-    "css-name": "panel-bottom",
-    "icons": "",
-    "menu-start": "off",
-    "width": "auto",
-    "controls": "off",
-    "controls-settings": {},
-    "scratchpad": {},
     "clock": {},
     "menu-start-settings": {
       "cmd-lock": "swaylock -f -c 000000",
@@ -225,22 +124,24 @@
       "width": 0
     },
     "modules-left": [
-      "sway-taskbar"
+      "sway-taskbar",
+      "playerctl"
     ],
-    "modules-center": [],
+    "modules-center": [
+      "clock"
+    ],
     "modules-right": [
+      "scratchpad",
       "openweather",
       "executor-cpuav",
-      "executor-cpubar",
       "executor-temp",
-      "executor-memory",
-      "executor-drives"
+      "tray"
     ],
     "sway-taskbar": {
       "workspace-buttons": false,
       "show-app-icon": true,
       "show-layout": false,
-      "show-app-name": true,
+      "show-app-name": false,
       "name-max-len": 15,
       "workspaces-spacing": 0,
       "task-padding": 0,
@@ -333,7 +234,18 @@
       "icon-size": 16,
       "icon-placement": "left"
     },
-    "playerctl": {},
+    "playerctl": {
+      "buttons-position": "left",
+      "icon-size": 12,
+      "chars": 20,
+      "button-css-name": "",
+      "label-css-name": "",
+      "interval": 1,
+      "angle": 0.0,
+      "scroll": true,
+      "show-cover": true,
+      "cover-size": 24
+    },
     "sway-workspaces": {
       "numbers": [
         "1",
@@ -357,7 +269,12 @@
       "angle": 0.0
     },
     "dwl-tags": {},
-    "tray": {},
+    "tray": {
+      "icon-size": 18,
+      "root-css-name": "tray",
+      "inner-css-name": "inner-tray",
+      "smooth-scrolling-threshold": 0
+    },
     "executor-weather": {
       "script": "curl https://wttr.in/?format=1 -s",
       "interval": 1800,
@@ -408,6 +325,8 @@
       "show-cloudiness": true,
       "show-visibility": true,
       "show-pop": true
-    }
+    },
+    "brightness-slider": {},
+    "homogeneous": true
   }
 ]

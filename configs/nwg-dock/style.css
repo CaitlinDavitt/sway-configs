@@ -1,7 +1,7 @@
 window {
   /*background-color: rgba (0, 0, 0, 0.8);*/
-  background: #36364f;
-  /*opacity: 0.9;*/
+  background: #2b3339;
+  opacity: 0.9;
 	border-radius: 15px;
 	border-style: none;
 	border-width: 1px;
@@ -11,13 +11,14 @@ window {
 #box {
   /* Define attributes of the box surrounding icons here */
   padding: 10px
+  border-radius: 10px;
 }
 
 button, image {
 	background: none;
 	border-style: none;
 	box-shadow: none;
-	color: #999
+	color: #999:
 }
 
 button {

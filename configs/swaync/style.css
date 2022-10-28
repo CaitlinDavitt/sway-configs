@@ -2,9 +2,9 @@
  * vim: ft=less 
  */
 
-@define-color border-color rgb(7,7,7);
-@define-color bg #2F383E;
-@define-color bg-hover #374247;
+@define-color border-color #282a36;
+@define-color bg #282a36;
+@define-color bg-hover #282a36;
 @define-color bg-focus rgba(255,255,255,.07);
 @define-color bg-selected rgb(255,255,255);
 
@@ -109,7 +109,7 @@
 .top-action-title {
   color: #eee;
   text-shadow: none;
-  padding: 10px
+  padding: 10px;
 }
 
 .control-center-clear-all {
@@ -139,11 +139,11 @@
 }
 
 .control-center {
-  background: rgba(47, 56, 62,.70);
+  background: rgba(40, 42, 54, 0.7);
 }
 .control-center-list {
   background: transparent;
-  padding: 6px
+  padding: 6px;
 }
 
 .floating-notifications {
