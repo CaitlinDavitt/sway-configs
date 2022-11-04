@@ -68,7 +68,7 @@
         {
           "name": "Shell Settings",
           "icon": "nwg-shell-config",
-          "cmd": "nwg-shell"
+          "cmd": "nwg-shell-config"
         }
       ],
       "menu": {

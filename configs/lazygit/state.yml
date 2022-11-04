@@ -1,11 +1,12 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/caitlin/Repos/Sbot
-- /home/caitlin/.config/nvim
 - /home/caitlin/Repos/sway-configs
+- /home/caitlin/Repos/Sbot
+- /home/caitlin/School/CS450/labs/lab5/iit-cs450-xv6-labs
+- /home/caitlin/.config/astronvim-bak/lua/user
 startuppopupversion: 5
 customcommandshistory:
 - q
 - exit
 - :q
-hidecommandlog: true
+hidecommandlog: false

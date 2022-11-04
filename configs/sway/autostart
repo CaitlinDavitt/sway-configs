@@ -1,5 +1,4 @@
-exec export QT_QPA_PLATFORMTHEME=qt5ct
-exec set XDG_CURRENT_DESKTOP=sway
+exec rm /tmp/nwg-shell-check-update.lock
 exec wlsunset -l 41.8874 -L -87.7656 -t 4500 -T 6500 -g 1.0
 exec swaync -s /home/caitlin/.config/swaync/style.css
 exec nm-applet --indicator

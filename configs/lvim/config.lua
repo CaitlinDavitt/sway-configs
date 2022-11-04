@@ -10,25 +10,21 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
-lvim.colorscheme = "dracula"
+lvim.format_on_save = false
+lvim.colorscheme = "everforest"
 vim.o.relativenumber = true
 vim.opt.swapfile = true -- creates a swapfile
 vim.opt.wrap = true -- display lines as one long line
--- vim.opt.spell = true
-
--- load legacy options
+-- to disable icons and use a minimalist setup, uncomment the following
+-- lvim.use_icons = false
 vim.cmd([[
   so ~/.config/lvim/legacy.vim
 ]])
--- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-
 vim.api.nvim_set_keymap('n', ';', 'l', { noremap = true })
 vim.api.nvim_set_keymap('n', 'l', 'k', { noremap = true })
 vim.api.nvim_set_keymap('n', 'k', 'j', { noremap = true })
@@ -38,6 +34,8 @@ vim.api.nvim_set_keymap('v', ';', 'l', { noremap = true })
 vim.api.nvim_set_keymap('v', 'l', 'k', { noremap = true })
 vim.api.nvim_set_keymap('v', 'k', 'j', { noremap = true })
 vim.api.nvim_set_keymap('v', 'j', 'h', { noremap = true })
+
+lvim.format_on_save = false
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -47,21 +45,25 @@ vim.api.nvim_set_keymap('v', 'j', 'h', { noremap = true })
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
-local _, actions = pcall(require, "telescope.actions")
-lvim.builtin.telescope.defaults.mappings = {
-  --   -- for input mode
-  i = {
-    ["<C-;>"] = actions.move_selection_next,
-    ["<C-j>"] = actions.move_selection_previous,
-    ["<C-l>"] = actions.cycle_history_next,
-    ["<C-k>"] = actions.cycle_history_prev,
-  },
-  -- for normal mode
-  n = {
-    ["<C-;>"] = actions.move_selection_next,
-    ["<C-j>"] = actions.move_selection_previous,
-  },
-}
+-- local _, actions = pcall(require, "telescope.actions")
+-- lvim.builtin.telescope.defaults.mappings = {
+--   -- for input mode
+--   i = {
+--     ["<C-j>"] = actions.move_selection_next,
+--     ["<C-k>"] = actions.move_selection_previous,
+--     ["<C-n>"] = actions.cycle_history_next,
+--     ["<C-p>"] = actions.cycle_history_prev,
+--   },
+--   -- for normal mode
+--   n = {
+--     ["<C-j>"] = actions.move_selection_next,
+--     ["<C-k>"] = actions.move_selection_previous,
+--   },
+-- }
+
+-- Change theme settings
+-- lvim.builtin.theme.options.dim_inactive = true
+-- lvim.builtin.theme.options.style = "storm"
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -79,7 +81,6 @@ lvim.builtin.telescope.defaults.mappings = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -88,26 +89,26 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
-  -- "javascript",
+  "javascript",
   "json",
   "lua",
   "python",
   "typescript",
-  -- "tsx",
-  -- "css",
+  "tsx",
+  "css",
   "rust",
   "java",
   "yaml",
 }
 
-lvim.builtin.treesitter.ignore_install = { "ocaml" }
-lvim.builtin.treesitter.highlight.enabled = true
+lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.highlight.enable = true
 
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
 -- lvim.lsp.installer.setup.ensure_installed = {
---     "sumeko_lua",
+--     "sumneko_lua",
 --     "jsonls",
 -- }
 -- -- change UI setting of `LspInstallInfo`
@@ -120,7 +121,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- }
 
 -- ---@usage disable automatic installation of servers
-lvim.lsp.installer.setup.automatic_installation = false
+-- lvim.lsp.installer.setup.automatic_installation = false
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
@@ -179,6 +180,12 @@ lvim.lsp.installer.setup.automatic_installation = false
 -- }
 
 -- Additional Plugins
+-- lvim.plugins = {
+--     {
+--       "folke/trouble.nvim",
+--       cmd = "TroubleToggle",
+--     },
+-- }
 lvim.plugins = {
   -- {"folke/tokyonight.nvim"},
   -- {
@@ -191,45 +198,14 @@ lvim.plugins = {
   { "rust-lang/rust.vim" },
   { "dracula/vim" },
   { "preservim/vim-lexical" },
+  { "mg979/vim-visual-multi"},
+  -- {"akinsho/toggleterm.nvim",
+  --   tag = '*',
+  -- }
   -- { "doums/oterm.nvim" },
   -- { "voldikss/vim-floaterm" }
 
 }
-
--- local function map(mode, lhs, rhs, opts)
---   local options = { noremap = true }
---   if opts then
---     options = vim.tbl_extend("force", options, opts)
---   end
---   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
--- end
-
--- vim.g.floaterm_width = 0.8
--- vim.g.floaterm_height = 0.8
--- vim.g.floaterm_keymap_toggle = "<Leader>tf"
--- map("n", "<Leader>tg", ":FloatermNew lazygit\n", { noremap = true })
--- map("n", "<Leader>tb", ":FloatermNew btop\n", { noremap = true })
-
--- let g:floaterm_keymap_toggle = '<F12>'
-
--- local open = require('oterm').open
-
--- vim.api.nvim_set_keymap('n', '<<leader>-t>', "ToggleTerm", { noremap = true })
--- vim.keymap.map('n', '<M-t>', function() open() end)
--- vim.api.nvim_set_keymap('n', '<<leader>-v>', function() open({ layout = 'vsplit' }) end, { noremap = true })
--- vim.api.nvim_set_keymap('n', '<<leader>-f>', function() open({ layout = 'center' }) end, { noremap = true })
-
--- spawn nnn in a centered floating window
--- vim.keymap.set('n', '<M-n>', function()
---   open({
---     name = 'nnn',
---     layout = 'center',
---     height = 0.7, -- 70% height of nvim size
---     width = 0.6, -- 60% width of nvim size
---     command = 'nnn',
---   })
--- end)
-
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
@@ -244,3 +220,51 @@ lvim.plugins = {
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
+lvim.builtin.alpha.dashboard.section.header.val =  {
+      [[                                                                       ]],
+      [[                                                                     ]],
+      [[       ████ ██████           █████      ██                     ]],
+      [[      ███████████             █████                             ]],
+      [[      █████████ ███████████████████ ███   ███████████   ]],
+      [[     █████████  ███    █████████████ █████ ██████████████   ]],
+      [[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
+      [[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
+      [[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
+      [[                                                                       ]],
+    }
+
+lvim.builtin.alpha.dashboard.section.footer.val = {
+  [[The computing scientist’s main challenge is not to ]],
+  [[get confused by the complexities of his own making.]],
+  [[                               ― Edsger W. Dijkstra]],
+}
+
+
+-- local Terminal  = require('toggleterm.terminal').Terminal
+-- local btop = Terminal:new({ cmd = "btop", hidden = true })
+
+-- function _btop_toggle()
+--   btop:toggle()
+-- end
+
+-- local floatterm = Terminal:new({ hidden = true })
+
+-- function _floatterm_toggle()
+--   floatterm:toggle()
+
+-- lvim.api.nvim_set_keymap("n", "<leader>tb", "<cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
+-- lvim.api.nvim_set_keymap("n", "<leader>tb", "<cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
+-- lvim.builtin.which_key.mappings["<leader>tb"] = {"<cmd>lua _btop_toggle()<CR>", "Toggle btop"}
+-- lvim.builtin.which_key.mappings["<leader>tb"] = {"<cmd>lua _floatterm_toggle()<CR>", "Toggle floatterm"}
+
+-- lvim.builtin.which_key.mappings["<leader>tf"] = {"<cmd>ToggleTerm", "Toggle float term"}
+-- lvim.builtin.which_key.mappings["P"] = {
+--   "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects"
+-- }
+
+lvim.builtin.which_key.mappings["t"] = {
+  name = "Terminal",
+  -- b ={"<cmd>lua _btop_toggle()<CR>", "Btop"},
+  -- f ={"<cmd>ToggleTerm", "Float Term"},
+
+}
